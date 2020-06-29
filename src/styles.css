@@ -1,0 +1,21 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+header,
+main {
+  margin: 0 auto;
+  max-width: 750px;
+}
+
+img {
+  max-height: 400px;
+  object-fit: cover;
+  width: 100%;
+}
