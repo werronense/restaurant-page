@@ -8,14 +8,57 @@ html {
   box-sizing: inherit;
 }
 
+/* Variables */
+:root {
+  --border: 2px solid black;
+}
+
 header,
 main {
   margin: 0 auto;
   max-width: 750px;
 }
 
+/* Image */
 img {
   max-height: 400px;
   object-fit: cover;
   width: 100%;
+}
+
+/* Article */
+article {
+  border-bottom: var(--border);
+  border-left: var(--border);
+  border-right: var(--border);
+  padding: 10px 15px 0 15px;
+}
+
+article h2 {
+  margin-top: 0;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  margin-top: 15px;
+}
+
+.tab {
+  border-bottom: var(--border);
+  border-left: var(--border);
+  border-top: var(--border);
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}
+
+.tab:last-child {
+  border-right: var(--border);
+}
+
+/* Selected Tab */
+.selected {
+  background: black;
+  color: white;
 }

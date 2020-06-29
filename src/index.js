@@ -24,6 +24,7 @@ function addContent() {
   // append main to #content
   content.appendChild(createMain([
     createImage('../src/pasta.jpg', 'bowl of spaghetti'),
+    createTabs(['Description', 'Menu', 'Contact']),
     createArticle([
       createHeading(2, 'Description'),
       createP(p1),
@@ -65,6 +66,23 @@ function createArticle(children) {
 function createMain(children) {
   const main = document.createElement('main');
   return populateParent(main, children);
+}
+
+function createTab(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  div.classList.add('tab');
+  if (text == 'Description') {
+    div.classList.add('selected');
+  }
+  return div;
+}
+
+function createTabs(tabNames) {
+  const div = document.createElement('div');
+  div.classList.add('tabs');
+  tabNames.forEach(name => div.appendChild(createTab(name)));
+  return div;
 }
 
 function populateParent(parent, children) {
