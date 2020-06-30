@@ -33,13 +33,17 @@ function createMain(children) {
   return populateParent(main, children);
 }
 
-function createTab(text) {
+function createTab([text, callback]) {
   const li = document.createElement('li');
   li.textContent = text;
   li.classList.add('tab');
+  li.setAttribute('id', text.toLowerCase());
+
   if (text == 'Description') {
     li.classList.add('selected');
   }
+
+  li.addEventListener('click', callback);
   return li;
 }
 
@@ -50,6 +54,23 @@ function createTabs(tabNames) {
   return ul;
 }
 
+function createContentTab() {
+  const div = document.createElement('div');
+  div.setAttribute('id', 'tab-content');
+  return div;
+}
+
+function toggleTab(tabID) {
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(tab => {
+    if (tab.getAttribute('id') == tabID) {
+      tab.classList.add('selected');
+    } else {
+      tab.classList.remove('selected');
+    }
+  });
+}
+
 function populateParent(parent, children) {
   children.forEach(child => parent.appendChild(child));
   return parent;
@@ -57,5 +78,5 @@ function populateParent(parent, children) {
 
 export {
   createHeading, createHeader, createImage, createP, createArticle,
-  createMain, createTab, createTabs, populateParent
+  createMain, createTab, createTabs, createContentTab, toggleTab, populateParent
 };

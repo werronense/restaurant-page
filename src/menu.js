@@ -29,4 +29,13 @@ const article = helpers.createArticle([
   menuItems
 ]);
 
-export { article as menu };
+function showMenuTab() {
+  const tabContent = document.getElementById('tab-content');
+
+  tabContent.innerHTML = "";
+  tabContent.appendChild(article);
+
+  helpers.toggleTab('menu');
+}
+
+export { showMenuTab };

@@ -17,4 +17,13 @@ const article = helpers.createArticle([
   helpers.createP(p2)
 ]);
 
-export { article as description };
+function showDescriptionTab() {
+  const tabContent = document.getElementById('tab-content');
+
+  tabContent.innerHTML = "";
+  tabContent.appendChild(article);
+
+  helpers.toggleTab('description');
+}
+
+export { showDescriptionTab };

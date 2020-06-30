@@ -1,8 +1,8 @@
 import './styles.css';
 import * as helpers from './helpers.js';
-import { description } from './description.js';
-import { menu } from './menu.js';
-import { contact } from './contact.js';
+import { showDescriptionTab } from './description.js';
+import { showMenuTab } from './menu.js';
+import { showContactTab } from './contact.js';
 
 document.addEventListener('DOMContentLoaded', addContent);
 
@@ -17,7 +17,14 @@ function addContent() {
   // append main to #content
   content.appendChild(helpers.createMain([
     helpers.createImage('../src/pasta.jpg', 'bowl of spaghetti'),
-    helpers.createTabs(['Description', 'Menu', 'Contact']),
-    description
+    helpers.createTabs([
+      ['Description', showDescriptionTab],
+      ['Menu', showMenuTab],
+      ['Contact', showContactTab]
+    ]),
+    helpers.createContentTab()
   ]));
+
+  // show contents of description tab
+  showDescriptionTab();
 }
