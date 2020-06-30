@@ -1,4 +1,5 @@
 import './styles.css';
+import * as helpers from './helpers.js';
 
 // text for paragraphs
 const p1 = `Lorem ipsum dolor sit amet, at quot postea cum.
@@ -19,73 +20,18 @@ function addContent() {
   const content = document.getElementById('content');
 
   // append the header
-  content.appendChild(createHeader([createHeading(1, 'Restaurant')]));
+  content.appendChild(
+    helpers.createHeader([helpers.createHeading(1, 'Restaurant')])
+  );
 
   // append main to #content
-  content.appendChild(createMain([
-    createImage('../src/pasta.jpg', 'bowl of spaghetti'),
-    createTabs(['Description', 'Menu', 'Contact']),
-    createArticle([
-      createHeading(2, 'Description'),
-      createP(p1),
-      createP(p2)
+  content.appendChild(helpers.createMain([
+    helpers.createImage('../src/pasta.jpg', 'bowl of spaghetti'),
+    helpers.createTabs(['Description', 'Menu', 'Contact']),
+    helpers.createArticle([
+      helpers.createHeading(2, 'Description'),
+      helpers.createP(p1),
+      helpers.createP(p2)
     ])
   ]));
-}
-
-// helper functions
-function createHeading(level, text) {
-  const heading = document.createElement(`h${level}`);
-  heading.textContent = text;
-  return heading;
-}
-
-function createHeader(children) {
-  const header = document.createElement('header');
-  return populateParent(header, children);
-}
-
-function createImage(src, alt) {
-  const img = document.createElement('img');
-  img.src = src;
-  img.alt = alt;
-  return img;
-}
-
-function createP(text) {
-  const p = document.createElement('p');
-  p.textContent = text;
-  return p;
-}
-
-function createArticle(children) {
-  const article = document.createElement('article');
-  return populateParent(article, children);
-}
-
-function createMain(children) {
-  const main = document.createElement('main');
-  return populateParent(main, children);
-}
-
-function createTab(text) {
-  const li = document.createElement('li');
-  li.textContent = text;
-  li.classList.add('tab');
-  if (text == 'Description') {
-    li.classList.add('selected');
-  }
-  return li;
-}
-
-function createTabs(tabNames) {
-  const ul = document.createElement('ul');
-  ul.classList.add('tabs');
-  tabNames.forEach(name => ul.appendChild(createTab(name)));
-  return ul;
-}
-
-function populateParent(parent, children) {
-  children.forEach(child => parent.appendChild(child));
-  return parent;
 }
