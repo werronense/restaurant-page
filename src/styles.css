@@ -41,7 +41,8 @@ article h2 {
 /* Tabs */
 .tabs {
   display: flex;
-  margin-top: 15px;
+  margin: 15px 0 0 0;
+  padding: 0;
 }
 
 .tab {
@@ -50,6 +51,7 @@ article h2 {
   border-top: var(--border);
   flex: 1;
   padding: 10px;
+  list-style: none;
   text-align: center;
 }
 

@@ -69,20 +69,20 @@ function createMain(children) {
 }
 
 function createTab(text) {
-  const div = document.createElement('div');
-  div.textContent = text;
-  div.classList.add('tab');
+  const li = document.createElement('li');
+  li.textContent = text;
+  li.classList.add('tab');
   if (text == 'Description') {
-    div.classList.add('selected');
+    li.classList.add('selected');
   }
-  return div;
+  return li;
 }
 
 function createTabs(tabNames) {
-  const div = document.createElement('div');
-  div.classList.add('tabs');
-  tabNames.forEach(name => div.appendChild(createTab(name)));
-  return div;
+  const ul = document.createElement('ul');
+  ul.classList.add('tabs');
+  tabNames.forEach(name => ul.appendChild(createTab(name)));
+  return ul;
 }
 
 function populateParent(parent, children) {
