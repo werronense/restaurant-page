@@ -57,5 +57,5 @@ function populateParent(parent, children) {
 
 export {
   createHeading, createHeader, createImage, createP, createArticle,
-  createMain, createTab, createTabs
+  createMain, createTab, createTabs, populateParent
 };
