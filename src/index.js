@@ -1,6 +1,8 @@
 import './styles.css';
 import * as helpers from './helpers.js';
 import { description } from './description.js';
+import { menu } from './menu.js';
+import { contact } from './contact.js';
 
 document.addEventListener('DOMContentLoaded', addContent);
 
