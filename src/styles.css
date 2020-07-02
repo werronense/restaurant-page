@@ -49,10 +49,16 @@ article h2 {
   border-bottom: var(--border);
   border-left: var(--border);
   border-top: var(--border);
+  border-radius: 5px 5px 0 0;
   flex: 1;
   padding: 10px;
   list-style: none;
   text-align: center;
+}
+
+.tab:hover,
+.tab:active {
+  cursor: pointer;
 }
 
 .tab:last-child {
@@ -63,4 +69,13 @@ article h2 {
 .selected {
   background: black;
   color: white;
+}
+
+/* Menu */
+.menu {
+  padding: 0;
+}
+
+.menu-item {
+  list-style: none;
 }
