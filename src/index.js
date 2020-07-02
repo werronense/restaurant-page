@@ -11,7 +11,7 @@ function addContent() {
 
   // append the header
   content.appendChild(
-    helpers.createHeader([helpers.createHeading(1, 'Restaurant')])
+    helpers.createHeader([helpers.createHeading(1, 'Restaurant Webpage')])
   );
 
   // append main to #content
