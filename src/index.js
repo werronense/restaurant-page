@@ -16,7 +16,7 @@ function addContent() {
 
   // append main to #content
   content.appendChild(helpers.createMain([
-    helpers.createImage('../src/pasta.jpg', 'bowl of spaghetti'),
+    helpers.createImage('./pasta.jpg', 'bowl of spaghetti'),
     helpers.createTabs([
       ['Description', showDescriptionTab],
       ['Menu', showMenuTab],
